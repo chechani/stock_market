@@ -1,0 +1,146 @@
+{
+  "actions": [],
+  "allow_rename": 1,
+  "autoname": "format:STR-{strategy_code}-{YYYY}",
+  "creation": "2026-10-30 13:00:00.000000",
+  "doctype": "DocType",
+  "document_type": "Document",
+  "engine": "InnoDB",
+  "field_order": [
+    "strategy_code", "strategy_name", "status", "direction",
+    "column_break_1",
+    "universe", "timeframe", "execution_mode",
+    "section_break_params",
+    "description", "parameters_json",
+    "section_break_safety",
+    "max_open_positions", "stop_loss_pct", "trailing_stop_pct",
+    "section_break_audit",
+    "created_by_user", "last_backtest_at", "last_backtest_result"
+  ],
+  "fields": [
+    {
+      "fieldname": "strategy_code",
+      "fieldtype": "Data",
+      "in_list_view": 1,
+      "label": "Strategy Code",
+      "reqd": 1,
+      "unique": 1
+    },
+    {
+      "fieldname": "strategy_name",
+      "fieldtype": "Data",
+      "in_list_view": 1,
+      "label": "Strategy Name",
+      "reqd": 1
+    },
+    {
+      "default": "Draft",
+      "fieldname": "status",
+      "fieldtype": "Select",
+      "in_list_view": 1,
+      "label": "Status",
+      "options": "Draft\nActive\nPaused\nRetired"
+    },
+    {
+      "default": "Long Only",
+      "fieldname": "direction",
+      "fieldtype": "Select",
+      "in_list_view": 1,
+      "label": "Direction",
+      "options": "Long Only\nShort Only\nBothsided"
+    },
+    {"fieldname": "column_break_1", "fieldtype": "Column Break"},
+    {
+      "fieldname": "universe",
+      "fieldtype": "Select",
+      "label": "Universe",
+      "options": "NIFTY 50\nNIFTY 200\nNIFTY Midcap 150\nCustom Watchlist\nAll NSE EQ"
+    },
+    {
+      "fieldname": "timeframe",
+      "fieldtype": "Select",
+      "label": "Timeframe",
+      "options": "Daily\nWeekly\n15min\n5min\n1min"
+    },
+    {
+      "default": "paper_only",
+      "fieldname": "execution_mode",
+      "fieldtype": "Select",
+      "label": "Execution Mode",
+      "options": "paper_only\nshadow_only\nlive_disabled",
+      "description": "Live trading always disabled unless separately authorised."
+    },
+    {"fieldname": "section_break_params", "fieldtype": "Section Break", "label": "Strategy Logic & Parameters"},
+    {
+      "fieldname": "description",
+      "fieldtype": "Text Editor",
+      "label": "Description / Thesis"
+    },
+    {
+      "fieldname": "parameters_json",
+      "fieldtype": "Code",
+      "label": "Parameters (JSON)",
+      "options": "JSON",
+      "description": "Serialised strategy config — no executable code permitted here."
+    },
+    {"fieldname": "section_break_safety", "fieldtype": "Section Break", "label": "Risk Guards"},
+    {
+      "default": "5",
+      "fieldname": "max_open_positions",
+      "fieldtype": "Int",
+      "label": "Max Open Positions"
+    },
+    {
+      "fieldname": "stop_loss_pct",
+      "fieldtype": "Percent",
+      "label": "Stop Loss %",
+      "description": "Maximum loss per position before protective stop triggers."
+    },
+    {
+      "fieldname": "trailing_stop_pct",
+      "fieldtype": "Percent",
+      "label": "Trailing Stop % (from peak)"
+    },
+    {"fieldname": "section_break_audit", "fieldtype": "Section Break", "label": "Audit"},
+    {
+      "fieldname": "created_by_user",
+      "fieldtype": "Link",
+      "label": "Created By",
+      "options": "User",
+      "read_only": 1
+    },
+    {
+      "fieldname": "last_backtest_at",
+      "fieldtype": "Datetime",
+      "label": "Last Backtest At",
+      "read_only": 1
+    },
+    {
+      "fieldname": "last_backtest_result",
+      "fieldtype": "Select",
+      "label": "Last Backtest Result",
+      "options": "\nPassed\nFailed\nPartial",
+      "read_only": 1
+    }
+  ],
+  "icon": "trending-up",
+  "links": [],
+  "modified": "2026-10-30 13:00:00.000000",
+  "modified_by": "Administrator",
+  "module": "Stock Market",
+  "name": "Strategy Definition",
+  "naming_rule": "Expression",
+  "owner": "Administrator",
+  "permissions": [
+    {"create": 1, "delete": 1, "read": 1, "report": 1, "role": "System Manager", "write": 1},
+    {"create": 1, "delete": 0, "read": 1, "report": 1, "role": "Stock Market Provider Admin", "write": 1},
+    {"create": 1, "delete": 0, "read": 1, "role": "Stock Market Operator", "write": 1},
+    {"create": 1, "delete": 1, "read": 1, "role": "Stock Market Analyst", "write": 1},
+    {"read": 1, "role": "Stock Market Client"},
+    {"read": 1, "role": "Stock Market Viewer"}
+  ],
+  "sort_field": "creation",
+  "sort_order": "DESC",
+  "track_changes": 1
+}
+

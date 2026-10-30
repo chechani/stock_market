@@ -1,0 +1,151 @@
+{
+  "actions": [],
+  "allow_rename": 0,
+  "autoname": "field:tenant_id",
+  "creation": "2026-10-30 12:00:00.000000",
+  "doctype": "DocType",
+  "document_type": "Document",
+  "engine": "InnoDB",
+  "field_order": [
+    "tenant_id",
+    "tenant_name",
+    "domain",
+    "status",
+    "column_break_1",
+    "site_mode",
+    "plan",
+    "owner_name",
+    "owner_email",
+    "section_break_infra",
+    "db_name",
+    "provisioned_at"
+  ],
+  "fields": [
+    {
+      "fieldname": "tenant_id",
+      "fieldtype": "Data",
+      "in_list_view": 1,
+      "label": "Tenant ID",
+      "reqd": 1,
+      "unique": 1
+    },
+    {
+      "fieldname": "tenant_name",
+      "fieldtype": "Data",
+      "in_list_view": 1,
+      "label": "Tenant Name",
+      "reqd": 1
+    },
+    {
+      "fieldname": "domain",
+      "fieldtype": "Data",
+      "in_list_view": 1,
+      "label": "Domain / Subdomain",
+      "reqd": 1,
+      "unique": 1
+    },
+    {
+      "default": "Pending",
+      "fieldname": "status",
+      "fieldtype": "Select",
+      "in_list_view": 1,
+      "label": "Status",
+      "options": "Pending\nProvisioning\nActive\nGrace\nSuspended\nArchived",
+      "reqd": 1
+    },
+    {
+      "fieldname": "column_break_1",
+      "fieldtype": "Column Break"
+    },
+    {
+      "default": "tenant",
+      "fieldname": "site_mode",
+      "fieldtype": "Select",
+      "in_list_view": 1,
+      "label": "Site Mode",
+      "options": "tenant\ncontrol",
+      "reqd": 1
+    },
+    {
+      "default": "Starter Paper",
+      "fieldname": "plan",
+      "fieldtype": "Select",
+      "in_list_view": 1,
+      "label": "Subscription Plan",
+      "options": "Starter Paper\nPro Research\nEnterprise Multi-Strategy",
+      "reqd": 1
+    },
+    {
+      "fieldname": "owner_name",
+      "fieldtype": "Data",
+      "label": "Owner Name"
+    },
+    {
+      "fieldname": "owner_email",
+      "fieldtype": "Data",
+      "label": "Owner Email",
+      "reqd": 1
+    },
+    {
+      "fieldname": "section_break_infra",
+      "fieldtype": "Section Break",
+      "label": "Infrastructure Boundary"
+    },
+    {
+      "fieldname": "db_name",
+      "fieldtype": "Data",
+      "label": "Database Name",
+      "read_only": 1
+    },
+    {
+      "fieldname": "provisioned_at",
+      "fieldtype": "Datetime",
+      "label": "Provisioned At",
+      "read_only": 1
+    }
+  ],
+  "icon": "building",
+  "index_web_pages_for_search": 1,
+  "links": [],
+  "modified": "2026-10-30 12:00:00.000000",
+  "modified_by": "Administrator",
+  "module": "Stock Market",
+  "name": "Stock Market Tenant",
+  "naming_rule": "By fieldname",
+  "owner": "Administrator",
+  "permissions": [
+    {
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "role": "System Manager",
+      "share": 1,
+      "write": 1
+    },
+    {
+      "create": 1,
+      "delete": 0,
+      "email": 1,
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "role": "Stock Market Provider Admin",
+      "share": 1,
+      "write": 1
+    },
+    {
+      "read": 1,
+      "role": "Stock Market Operator"
+    }
+  ],
+  "quick_entry": 1,
+  "sort_field": "creation",
+  "sort_order": "DESC",
+  "track_changes": 1
+}
+

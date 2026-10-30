@@ -1,0 +1,186 @@
+{
+  "actions": [],
+  "allow_rename": 0,
+  "autoname": "format:CON-{tenant}-{YYYY}{MM}-{#####}",
+  "creation": "2026-10-30 14:00:00.000000",
+  "doctype": "DocType",
+  "document_type": "Document",
+  "engine": "InnoDB",
+  "field_order": [
+    "tenant",
+    "client",
+    "mandate",
+    "consent_type",
+    "status",
+    "column_break_1",
+    "acknowledged_paper_only",
+    "signed_at",
+    "valid_until",
+    "section_break_integrity",
+    "consent_text_hash",
+    "ip_address",
+    "user_agent",
+    "section_break_revocation",
+    "revoked_at",
+    "revocation_reason"
+  ],
+  "fields": [
+    {
+      "fieldname": "tenant",
+      "fieldtype": "Link",
+      "in_list_view": 1,
+      "label": "Tenant",
+      "options": "Stock Market Tenant",
+      "reqd": 1
+    },
+    {
+      "fieldname": "client",
+      "fieldtype": "Link",
+      "in_list_view": 1,
+      "label": "Client Profile",
+      "options": "Client Profile",
+      "reqd": 1
+    },
+    {
+      "fieldname": "mandate",
+      "fieldtype": "Link",
+      "in_list_view": 1,
+      "label": "Client Mandate",
+      "options": "Client Mandate"
+    },
+    {
+      "default": "Paper Mode Disclaimer",
+      "fieldname": "consent_type",
+      "fieldtype": "Select",
+      "in_list_view": 1,
+      "label": "Consent Type",
+      "options": "Paper Mode Disclaimer\nMandate Agreement\nRisk Disclosure\nAlgorithmic Trading Terms",
+      "reqd": 1
+    },
+    {
+      "default": "Valid",
+      "fieldname": "status",
+      "fieldtype": "Select",
+      "in_list_view": 1,
+      "label": "Status",
+      "options": "Valid\nRevoked\nExpired",
+      "reqd": 1
+    },
+    {
+      "fieldname": "column_break_1",
+      "fieldtype": "Column Break"
+    },
+    {
+      "default": "1",
+      "description": "Invariant: Live trading is disabled. User must explicitly acknowledge paper simulation only.",
+      "fieldname": "acknowledged_paper_only",
+      "fieldtype": "Check",
+      "in_list_view": 1,
+      "label": "Acknowledged Paper-Only Execution",
+      "reqd": 1
+    },
+    {
+      "fieldname": "signed_at",
+      "fieldtype": "Datetime",
+      "in_list_view": 1,
+      "label": "Signed At",
+      "reqd": 1
+    },
+    {
+      "fieldname": "valid_until",
+      "fieldtype": "Date",
+      "in_list_view": 1,
+      "label": "Valid Until",
+      "reqd": 1
+    },
+    {
+      "fieldname": "section_break_integrity",
+      "fieldtype": "Section Break",
+      "label": "Integrity Audit Trail"
+    },
+    {
+      "fieldname": "consent_text_hash",
+      "fieldtype": "Data",
+      "label": "Consent Text SHA-256 Hash",
+      "read_only": 1
+    },
+    {
+      "fieldname": "ip_address",
+      "fieldtype": "Data",
+      "label": "Signer IP Address",
+      "read_only": 1
+    },
+    {
+      "fieldname": "user_agent",
+      "fieldtype": "Small Text",
+      "label": "Signer Browser / User-Agent",
+      "read_only": 1
+    },
+    {
+      "fieldname": "section_break_revocation",
+      "fieldtype": "Section Break",
+      "label": "Revocation Trail"
+    },
+    {
+      "fieldname": "revoked_at",
+      "fieldtype": "Datetime",
+      "label": "Revoked At",
+      "read_only": 1
+    },
+    {
+      "fieldname": "revocation_reason",
+      "fieldtype": "Small Text",
+      "label": "Revocation Reason"
+    }
+  ],
+  "icon": "shield-check",
+  "links": [],
+  "modified": "2026-10-30 14:00:00.000000",
+  "modified_by": "Administrator",
+  "module": "Stock Market",
+  "name": "Client Consent Record",
+  "naming_rule": "Expression",
+  "owner": "Administrator",
+  "permissions": [
+    {
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "role": "System Manager",
+      "share": 1,
+      "write": 1
+    },
+    {
+      "create": 1,
+      "delete": 0,
+      "read": 1,
+      "report": 1,
+      "role": "Stock Market Provider Admin",
+      "write": 1
+    },
+    {
+      "create": 1,
+      "delete": 0,
+      "read": 1,
+      "role": "Stock Market Operator",
+      "write": 1
+    },
+    {
+      "read": 1,
+      "role": "Stock Market Analyst"
+    },
+    {
+      "create": 1,
+      "read": 1,
+      "role": "Stock Market Client"
+    }
+  ],
+  "sort_field": "signed_at",
+  "sort_order": "DESC",
+  "track_changes": 1
+}
+

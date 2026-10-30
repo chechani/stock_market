@@ -1,0 +1,204 @@
+{
+  "actions": [],
+  "allow_rename": 0,
+  "autoname": "format:ORD-{tenant}-{YYYYMMDD}-{#####}",
+  "creation": "2026-10-30 15:30:00.000000",
+  "doctype": "DocType",
+  "document_type": "Document",
+  "engine": "InnoDB",
+  "field_order": [
+    "tenant",
+    "symbol",
+    "exchange",
+    "transaction_type",
+    "order_type",
+    "quantity",
+    "column_break_1",
+    "price",
+    "trigger_price",
+    "status",
+    "execution_price",
+    "execution_mode",
+    "section_break_link",
+    "mandate",
+    "strategy",
+    "submitted_at",
+    "executed_at",
+    "notes"
+  ],
+  "fields": [
+    {
+      "fieldname": "tenant",
+      "fieldtype": "Link",
+      "in_list_view": 1,
+      "label": "Tenant",
+      "options": "Stock Market Tenant",
+      "reqd": 1
+    },
+    {
+      "fieldname": "symbol",
+      "fieldtype": "Data",
+      "in_list_view": 1,
+      "label": "Symbol",
+      "reqd": 1
+    },
+    {
+      "default": "NSE",
+      "fieldname": "exchange",
+      "fieldtype": "Select",
+      "label": "Exchange",
+      "options": "NSE\nBSE\nMCX",
+      "reqd": 1
+    },
+    {
+      "fieldname": "transaction_type",
+      "fieldtype": "Select",
+      "in_list_view": 1,
+      "label": "Action",
+      "options": "BUY\nSELL",
+      "reqd": 1
+    },
+    {
+      "default": "MARKET",
+      "fieldname": "order_type",
+      "fieldtype": "Select",
+      "in_list_view": 1,
+      "label": "Order Type",
+      "options": "MARKET\nLIMIT\nSL_LIMIT",
+      "reqd": 1
+    },
+    {
+      "default": "1",
+      "fieldname": "quantity",
+      "fieldtype": "Int",
+      "in_list_view": 1,
+      "label": "Quantity",
+      "reqd": 1
+    },
+    {
+      "fieldname": "column_break_1",
+      "fieldtype": "Column Break"
+    },
+    {
+      "default": "0",
+      "fieldname": "price",
+      "fieldtype": "Float",
+      "label": "Order Price (₹)"
+    },
+    {
+      "default": "0",
+      "fieldname": "trigger_price",
+      "fieldtype": "Float",
+      "label": "Trigger Price (₹)"
+    },
+    {
+      "default": "EXECUTED",
+      "fieldname": "status",
+      "fieldtype": "Select",
+      "in_list_view": 1,
+      "label": "Execution Status",
+      "options": "SUBMITTED\nEXECUTED\nCANCELLED\nREJECTED",
+      "reqd": 1
+    },
+    {
+      "default": "0",
+      "fieldname": "execution_price",
+      "fieldtype": "Float",
+      "in_list_view": 1,
+      "label": "Executed Price (₹)"
+    },
+    {
+      "default": "paper_only",
+      "fieldname": "execution_mode",
+      "fieldtype": "Select",
+      "label": "Execution Safety Mode",
+      "options": "paper_only\nshadow_only\nlive_disabled",
+      "read_only": 1,
+      "reqd": 1
+    },
+    {
+      "fieldname": "section_break_link",
+      "fieldtype": "Section Break",
+      "label": "Mandate & Strategy Attribution"
+    },
+    {
+      "fieldname": "mandate",
+      "fieldtype": "Link",
+      "label": "Client Mandate",
+      "options": "Client Mandate"
+    },
+    {
+      "fieldname": "strategy",
+      "fieldtype": "Link",
+      "label": "Strategy Definition",
+      "options": "Strategy Definition"
+    },
+    {
+      "fieldname": "submitted_at",
+      "fieldtype": "Datetime",
+      "in_list_view": 1,
+      "label": "Submitted Timestamp",
+      "reqd": 1
+    },
+    {
+      "fieldname": "executed_at",
+      "fieldtype": "Datetime",
+      "label": "Execution Timestamp"
+    },
+    {
+      "fieldname": "notes",
+      "fieldtype": "Small Text",
+      "label": "Execution Fill Notes"
+    }
+  ],
+  "icon": "clipboard-list",
+  "links": [],
+  "modified": "2026-10-30 15:30:00.000000",
+  "modified_by": "Administrator",
+  "module": "Stock Market",
+  "name": "Paper Order Ticket",
+  "naming_rule": "Expression",
+  "owner": "Administrator",
+  "permissions": [
+    {
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "role": "System Manager",
+      "share": 1,
+      "write": 1
+    },
+    {
+      "create": 1,
+      "delete": 0,
+      "read": 1,
+      "report": 1,
+      "role": "Stock Market Provider Admin",
+      "write": 1
+    },
+    {
+      "create": 1,
+      "delete": 0,
+      "read": 1,
+      "role": "Stock Market Operator",
+      "write": 1
+    },
+    {
+      "create": 1,
+      "read": 1,
+      "role": "Stock Market Client"
+    },
+    {
+      "read": 1,
+      "role": "Stock Market Analyst"
+    }
+  ],
+  "sort_field": "submitted_at",
+  "sort_order": "DESC",
+  "track_changes": 1
+}
+

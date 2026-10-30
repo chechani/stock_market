@@ -1,0 +1,163 @@
+{
+  "actions": [],
+  "allow_rename": 0,
+  "autoname": "format:CDL-{symbol}-{timeframe}-{YYYYMMDDHHmmss}-{#####}",
+  "creation": "2026-10-30 15:00:00.000000",
+  "doctype": "DocType",
+  "document_type": "Document",
+  "engine": "InnoDB",
+  "field_order": [
+    "symbol",
+    "exchange",
+    "timeframe",
+    "timestamp",
+    "column_break_1",
+    "open",
+    "high",
+    "low",
+    "close",
+    "volume",
+    "section_break_meta",
+    "is_synthetic",
+    "feed_source"
+  ],
+  "fields": [
+    {
+      "fieldname": "symbol",
+      "fieldtype": "Data",
+      "in_list_view": 1,
+      "label": "Symbol",
+      "reqd": 1
+    },
+    {
+      "default": "NSE",
+      "fieldname": "exchange",
+      "fieldtype": "Select",
+      "in_list_view": 1,
+      "label": "Exchange",
+      "options": "NSE\nBSE\nMCX",
+      "reqd": 1
+    },
+    {
+      "default": "1m",
+      "fieldname": "timeframe",
+      "fieldtype": "Select",
+      "in_list_view": 1,
+      "label": "Timeframe",
+      "options": "1m\n5m\n15m\n1h\nDaily\nWeekly",
+      "reqd": 1
+    },
+    {
+      "fieldname": "timestamp",
+      "fieldtype": "Datetime",
+      "in_list_view": 1,
+      "label": "Candle Timestamp",
+      "reqd": 1
+    },
+    {
+      "fieldname": "column_break_1",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "open",
+      "fieldtype": "Float",
+      "in_list_view": 1,
+      "label": "Open (₹)",
+      "reqd": 1
+    },
+    {
+      "fieldname": "high",
+      "fieldtype": "Float",
+      "in_list_view": 1,
+      "label": "High (₹)",
+      "reqd": 1
+    },
+    {
+      "fieldname": "low",
+      "fieldtype": "Float",
+      "in_list_view": 1,
+      "label": "Low (₹)",
+      "reqd": 1
+    },
+    {
+      "fieldname": "close",
+      "fieldtype": "Float",
+      "in_list_view": 1,
+      "label": "Close (₹)",
+      "reqd": 1
+    },
+    {
+      "default": "0",
+      "fieldname": "volume",
+      "fieldtype": "Int",
+      "in_list_view": 1,
+      "label": "Volume"
+    },
+    {
+      "fieldname": "section_break_meta",
+      "fieldtype": "Section Break",
+      "label": "Simulation Meta"
+    },
+    {
+      "default": "1",
+      "fieldname": "is_synthetic",
+      "fieldtype": "Check",
+      "label": "Synthetic / Paper Feed"
+    },
+    {
+      "default": "XTS Paper Adapter",
+      "fieldname": "feed_source",
+      "fieldtype": "Data",
+      "label": "Feed Source Adapter"
+    }
+  ],
+  "icon": "bar-chart-2",
+  "links": [],
+  "modified": "2026-10-30 15:00:00.000000",
+  "modified_by": "Administrator",
+  "module": "Stock Market",
+  "name": "Market Candle",
+  "naming_rule": "Expression",
+  "owner": "Administrator",
+  "permissions": [
+    {
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "role": "System Manager",
+      "share": 1,
+      "write": 1
+    },
+    {
+      "create": 1,
+      "delete": 0,
+      "read": 1,
+      "report": 1,
+      "role": "Stock Market Provider Admin",
+      "write": 1
+    },
+    {
+      "create": 1,
+      "delete": 0,
+      "read": 1,
+      "role": "Stock Market Operator",
+      "write": 1
+    },
+    {
+      "read": 1,
+      "role": "Stock Market Analyst"
+    },
+    {
+      "read": 1,
+      "role": "Stock Market Client"
+    }
+  ],
+  "sort_field": "timestamp",
+  "sort_order": "DESC",
+  "track_changes": 1
+}
+

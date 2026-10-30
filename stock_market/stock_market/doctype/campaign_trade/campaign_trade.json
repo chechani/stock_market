@@ -1,0 +1,189 @@
+{
+  "actions": [],
+  "allow_rename": 0,
+  "autoname": "format:TRD-{campaign}-{#####}",
+  "creation": "2026-10-30 16:00:00.000000",
+  "doctype": "DocType",
+  "document_type": "Document",
+  "engine": "InnoDB",
+  "field_order": [
+    "campaign",
+    "symbol",
+    "direction",
+    "quantity",
+    "status",
+    "column_break_1",
+    "entry_time",
+    "entry_price",
+    "exit_time",
+    "exit_price",
+    "section_break_outcome",
+    "pnl_inr",
+    "return_pct",
+    "column_break_2",
+    "exit_reason",
+    "notes"
+  ],
+  "fields": [
+    {
+      "fieldname": "campaign",
+      "fieldtype": "Link",
+      "in_list_view": 1,
+      "label": "Research Campaign",
+      "options": "Research Campaign",
+      "reqd": 1
+    },
+    {
+      "fieldname": "symbol",
+      "fieldtype": "Data",
+      "in_list_view": 1,
+      "label": "Symbol",
+      "reqd": 1
+    },
+    {
+      "default": "BUY",
+      "fieldname": "direction",
+      "fieldtype": "Select",
+      "in_list_view": 1,
+      "label": "Direction",
+      "options": "BUY\nSELL",
+      "reqd": 1
+    },
+    {
+      "default": "10",
+      "fieldname": "quantity",
+      "fieldtype": "Int",
+      "in_list_view": 1,
+      "label": "Quantity",
+      "reqd": 1
+    },
+    {
+      "default": "CLOSED",
+      "fieldname": "status",
+      "fieldtype": "Select",
+      "label": "Status",
+      "options": "OPEN\nCLOSED"
+    },
+    {
+      "fieldname": "column_break_1",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "entry_time",
+      "fieldtype": "Datetime",
+      "in_list_view": 1,
+      "label": "Entry Time",
+      "reqd": 1
+    },
+    {
+      "fieldname": "entry_price",
+      "fieldtype": "Currency",
+      "in_list_view": 1,
+      "label": "Entry Price",
+      "reqd": 1
+    },
+    {
+      "fieldname": "exit_time",
+      "fieldtype": "Datetime",
+      "label": "Exit Time"
+    },
+    {
+      "fieldname": "exit_price",
+      "fieldtype": "Currency",
+      "label": "Exit Price"
+    },
+    {
+      "fieldname": "section_break_outcome",
+      "fieldtype": "Section Break",
+      "label": "Outcome & Attribution"
+    },
+    {
+      "default": "0.0",
+      "fieldname": "pnl_inr",
+      "fieldtype": "Currency",
+      "in_list_view": 1,
+      "label": "PnL (INR)"
+    },
+    {
+      "default": "0.0",
+      "fieldname": "return_pct",
+      "fieldtype": "Percent",
+      "in_list_view": 1,
+      "label": "Return (%)"
+    },
+    {
+      "fieldname": "column_break_2",
+      "fieldtype": "Column Break"
+    },
+    {
+      "default": "Take Profit",
+      "fieldname": "exit_reason",
+      "fieldtype": "Select",
+      "in_list_view": 1,
+      "label": "Exit Reason",
+      "options": "Take Profit\nStop Loss\nSignal Reversal\nTime Exit"
+    },
+    {
+      "fieldname": "notes",
+      "fieldtype": "Small Text",
+      "label": "Execution Notes"
+    }
+  ],
+  "links": [],
+  "modified": "2026-10-30 16:00:00.000000",
+  "modified_by": "Administrator",
+  "module": "Stock Market",
+  "name": "Campaign Trade",
+  "owner": "Administrator",
+  "permissions": [
+    {
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "role": "System Manager",
+      "share": 1,
+      "write": 1
+    },
+    {
+      "create": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "role": "Stock Market Operator",
+      "share": 1,
+      "write": 1
+    },
+    {
+      "create": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "role": "Stock Market Analyst",
+      "share": 1,
+      "write": 1
+    },
+    {
+      "email": 1,
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "role": "Stock Market Client",
+      "share": 0,
+      "write": 0
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "states": [],
+  "track_changes": 1
+}
+

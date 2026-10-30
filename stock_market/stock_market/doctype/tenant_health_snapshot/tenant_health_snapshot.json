@@ -1,0 +1,154 @@
+{
+  "actions": [],
+  "allow_rename": 0,
+  "autoname": "format:THS-{tenant}-{YYYYMMDD}-{#####}",
+  "creation": "2026-10-30 14:30:00.000000",
+  "doctype": "DocType",
+  "document_type": "Document",
+  "engine": "InnoDB",
+  "field_order": [
+    "tenant",
+    "health_status",
+    "latency_ms",
+    "captured_at",
+    "column_break_1",
+    "active_strategies_count",
+    "active_mandates_count",
+    "paper_orders_24h",
+    "error_count_24h",
+    "section_break_infra",
+    "cpu_load_pct",
+    "memory_usage_mb",
+    "db_size_mb",
+    "notes"
+  ],
+  "fields": [
+    {
+      "fieldname": "tenant",
+      "fieldtype": "Link",
+      "in_list_view": 1,
+      "label": "Tenant",
+      "options": "Stock Market Tenant",
+      "reqd": 1
+    },
+    {
+      "default": "Healthy",
+      "fieldname": "health_status",
+      "fieldtype": "Select",
+      "in_list_view": 1,
+      "label": "Health Status",
+      "options": "Healthy\nDegraded\nCritical",
+      "reqd": 1
+    },
+    {
+      "default": "0",
+      "fieldname": "latency_ms",
+      "fieldtype": "Float",
+      "in_list_view": 1,
+      "label": "API Ping Latency (ms)"
+    },
+    {
+      "fieldname": "captured_at",
+      "fieldtype": "Datetime",
+      "in_list_view": 1,
+      "label": "Snapshot Timestamp",
+      "reqd": 1
+    },
+    {
+      "fieldname": "column_break_1",
+      "fieldtype": "Column Break"
+    },
+    {
+      "default": "0",
+      "fieldname": "active_strategies_count",
+      "fieldtype": "Int",
+      "in_list_view": 1,
+      "label": "Active Strategies"
+    },
+    {
+      "default": "0",
+      "fieldname": "active_mandates_count",
+      "fieldtype": "Int",
+      "label": "Active Mandates"
+    },
+    {
+      "default": "0",
+      "fieldname": "paper_orders_24h",
+      "fieldtype": "Int",
+      "in_list_view": 1,
+      "label": "Paper Simulation Volume (24h)"
+    },
+    {
+      "default": "0",
+      "fieldname": "error_count_24h",
+      "fieldtype": "Int",
+      "label": "Errors (24h)"
+    },
+    {
+      "fieldname": "section_break_infra",
+      "fieldtype": "Section Break",
+      "label": "Infrastructure Quota Projections"
+    },
+    {
+      "default": "0",
+      "fieldname": "cpu_load_pct",
+      "fieldtype": "Float",
+      "label": "CPU Load (%)"
+    },
+    {
+      "default": "0",
+      "fieldname": "memory_usage_mb",
+      "fieldtype": "Float",
+      "label": "Memory Usage (MB)"
+    },
+    {
+      "default": "0",
+      "fieldname": "db_size_mb",
+      "fieldtype": "Float",
+      "label": "Isolated Database Size (MB)"
+    },
+    {
+      "fieldname": "notes",
+      "fieldtype": "Small Text",
+      "label": "Telemetry Notes"
+    }
+  ],
+  "icon": "activity",
+  "links": [],
+  "modified": "2026-10-30 14:30:00.000000",
+  "modified_by": "Administrator",
+  "module": "Stock Market",
+  "name": "Tenant Health Snapshot",
+  "naming_rule": "Expression",
+  "owner": "Administrator",
+  "permissions": [
+    {
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "role": "System Manager",
+      "share": 1,
+      "write": 1
+    },
+    {
+      "create": 1,
+      "delete": 0,
+      "read": 1,
+      "report": 1,
+      "role": "Stock Market Provider Admin",
+      "write": 1
+    },
+    {
+      "read": 1,
+      "role": "Stock Market Operator"
+    }
+  ],
+  "sort_field": "captured_at",
+  "sort_order": "DESC",
+  "track_changes": 1
+}
+

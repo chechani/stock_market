@@ -1,0 +1,190 @@
+{
+  "actions": [],
+  "allow_rename": 0,
+  "autoname": "format:CL-{tenant}-{client_code}",
+  "creation": "2026-10-30 14:00:00.000000",
+  "doctype": "DocType",
+  "document_type": "Document",
+  "engine": "InnoDB",
+  "field_order": [
+    "tenant",
+    "client_code",
+    "client_name",
+    "email",
+    "status",
+    "column_break_1",
+    "phone",
+    "pan_masked",
+    "kyc_status",
+    "kyc_verified_at",
+    "section_break_risk",
+    "risk_profile",
+    "investment_objective",
+    "is_accredited_investor",
+    "annual_income_slab",
+    "section_break_notes",
+    "notes"
+  ],
+  "fields": [
+    {
+      "fieldname": "tenant",
+      "fieldtype": "Link",
+      "in_list_view": 1,
+      "label": "Tenant",
+      "options": "Stock Market Tenant",
+      "reqd": 1
+    },
+    {
+      "fieldname": "client_code",
+      "fieldtype": "Data",
+      "in_list_view": 1,
+      "label": "Client Code",
+      "reqd": 1
+    },
+    {
+      "fieldname": "client_name",
+      "fieldtype": "Data",
+      "in_list_view": 1,
+      "label": "Full Name",
+      "reqd": 1
+    },
+    {
+      "fieldname": "email",
+      "fieldtype": "Data",
+      "in_list_view": 1,
+      "label": "Email Address",
+      "reqd": 1
+    },
+    {
+      "default": "Active",
+      "fieldname": "status",
+      "fieldtype": "Select",
+      "in_list_view": 1,
+      "label": "Account Status",
+      "options": "Active\nInactive\nSuspended"
+    },
+    {
+      "fieldname": "column_break_1",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "phone",
+      "fieldtype": "Data",
+      "label": "Phone Number"
+    },
+    {
+      "fieldname": "pan_masked",
+      "fieldtype": "Data",
+      "label": "PAN (Masked)",
+      "description": "Masked format e.g. ABCDE****F"
+    },
+    {
+      "default": "Pending",
+      "fieldname": "kyc_status",
+      "fieldtype": "Select",
+      "in_list_view": 1,
+      "label": "KYC Status",
+      "options": "Pending\nSubmitted\nVerified\nRejected\nExpired",
+      "reqd": 1
+    },
+    {
+      "fieldname": "kyc_verified_at",
+      "fieldtype": "Datetime",
+      "label": "KYC Verified At",
+      "read_only": 1
+    },
+    {
+      "fieldname": "section_break_risk",
+      "fieldtype": "Section Break",
+      "label": "Risk Profiling & Suitability"
+    },
+    {
+      "default": "Moderate",
+      "fieldname": "risk_profile",
+      "fieldtype": "Select",
+      "in_list_view": 1,
+      "label": "Risk Classification",
+      "options": "Conservative\nModerate\nAggressive\nSpeculative",
+      "reqd": 1
+    },
+    {
+      "default": "Capital Growth",
+      "fieldname": "investment_objective",
+      "fieldtype": "Select",
+      "label": "Investment Objective",
+      "options": "Capital Preservation\nIncome\nCapital Growth\nAggressive Appreciation"
+    },
+    {
+      "default": "0",
+      "fieldname": "is_accredited_investor",
+      "fieldtype": "Check",
+      "label": "Accredited Investor"
+    },
+    {
+      "default": "10L - 25L",
+      "fieldname": "annual_income_slab",
+      "fieldtype": "Select",
+      "label": "Annual Income Slab",
+      "options": "< 5L\n5L - 10L\n10L - 25L\n25L - 1Cr\n> 1Cr"
+    },
+    {
+      "fieldname": "section_break_notes",
+      "fieldtype": "Section Break",
+      "label": "Audit & Compliance Notes"
+    },
+    {
+      "fieldname": "notes",
+      "fieldtype": "Small Text",
+      "label": "Notes"
+    }
+  ],
+  "icon": "user-check",
+  "links": [],
+  "modified": "2026-10-30 14:00:00.000000",
+  "modified_by": "Administrator",
+  "module": "Stock Market",
+  "name": "Client Profile",
+  "naming_rule": "Expression",
+  "owner": "Administrator",
+  "permissions": [
+    {
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "role": "System Manager",
+      "share": 1,
+      "write": 1
+    },
+    {
+      "create": 1,
+      "delete": 0,
+      "read": 1,
+      "report": 1,
+      "role": "Stock Market Provider Admin",
+      "write": 1
+    },
+    {
+      "create": 1,
+      "delete": 0,
+      "read": 1,
+      "role": "Stock Market Operator",
+      "write": 1
+    },
+    {
+      "read": 1,
+      "role": "Stock Market Analyst"
+    },
+    {
+      "read": 1,
+      "role": "Stock Market Client"
+    }
+  ],
+  "sort_field": "creation",
+  "sort_order": "DESC",
+  "track_changes": 1
+}
+

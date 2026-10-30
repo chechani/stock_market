@@ -1,0 +1,85 @@
+{
+  "actions": [],
+  "allow_rename": 1,
+  "autoname": "format:WL-{tenant}-{watchlist_name}",
+  "creation": "2026-10-30 13:00:00.000000",
+  "doctype": "DocType",
+  "document_type": "Document",
+  "engine": "InnoDB",
+  "field_order": [
+    "tenant", "watchlist_name", "description", "is_default",
+    "column_break_1",
+    "exchange_filter", "instrument_type_filter",
+    "section_break_items",
+    "items"
+  ],
+  "fields": [
+    {
+      "fieldname": "tenant",
+      "fieldtype": "Link",
+      "in_list_view": 1,
+      "label": "Tenant",
+      "options": "Stock Market Tenant",
+      "reqd": 1
+    },
+    {
+      "fieldname": "watchlist_name",
+      "fieldtype": "Data",
+      "in_list_view": 1,
+      "label": "Watchlist Name",
+      "reqd": 1
+    },
+    {
+      "fieldname": "description",
+      "fieldtype": "Small Text",
+      "label": "Description"
+    },
+    {
+      "default": "0",
+      "fieldname": "is_default",
+      "fieldtype": "Check",
+      "in_list_view": 1,
+      "label": "Default Watchlist"
+    },
+    {"fieldname": "column_break_1", "fieldtype": "Column Break"},
+    {
+      "fieldname": "exchange_filter",
+      "fieldtype": "Select",
+      "label": "Exchange Filter",
+      "options": "\nNSE\nBSE\nNFO\nBFO\nMCX\nAll"
+    },
+    {
+      "fieldname": "instrument_type_filter",
+      "fieldtype": "Select",
+      "label": "Instrument Type",
+      "options": "\nEQ\nFUT\nOPT\nIDX\nAll"
+    },
+    {"fieldname": "section_break_items", "fieldtype": "Section Break", "label": "Instruments"},
+    {
+      "fieldname": "items",
+      "fieldtype": "Table",
+      "label": "Watchlist Items",
+      "options": "Watchlist Item"
+    }
+  ],
+  "icon": "list",
+  "links": [],
+  "modified": "2026-10-30 13:00:00.000000",
+  "modified_by": "Administrator",
+  "module": "Stock Market",
+  "name": "Watchlist",
+  "naming_rule": "Expression",
+  "owner": "Administrator",
+  "permissions": [
+    {"create": 1, "delete": 1, "read": 1, "report": 1, "role": "System Manager", "write": 1},
+    {"create": 1, "delete": 1, "read": 1, "report": 1, "role": "Stock Market Provider Admin", "write": 1},
+    {"create": 1, "delete": 1, "read": 1, "role": "Stock Market Operator", "write": 1},
+    {"create": 1, "delete": 1, "read": 1, "role": "Stock Market Analyst", "write": 1},
+    {"read": 1, "role": "Stock Market Client"},
+    {"read": 1, "role": "Stock Market Viewer"}
+  ],
+  "sort_field": "creation",
+  "sort_order": "DESC",
+  "track_changes": 1
+}
+

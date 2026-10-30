@@ -1,0 +1,198 @@
+{
+  "actions": [],
+  "allow_rename": 0,
+  "autoname": "format:REC-{tenant}-{YYYYMMDD}-{#####}",
+  "creation": "2026-10-30 16:00:00.000000",
+  "doctype": "DocType",
+  "document_type": "Document",
+  "engine": "InnoDB",
+  "field_order": [
+    "batch_name",
+    "tenant",
+    "batch_date",
+    "status",
+    "column_break_1",
+    "execution_mode",
+    "total_orders",
+    "matched_orders",
+    "unmatched_orders",
+    "discrepancy_count",
+    "section_break_summary",
+    "total_paper_pnl",
+    "total_broker_pnl",
+    "variance_inr",
+    "variance_pct",
+    "column_break_summary2",
+    "run_duration_ms",
+    "run_at",
+    "notes"
+  ],
+  "fields": [
+    {
+      "fieldname": "batch_name",
+      "fieldtype": "Data",
+      "in_list_view": 1,
+      "label": "Batch Name",
+      "reqd": 1
+    },
+    {
+      "default": "pandey",
+      "fieldname": "tenant",
+      "fieldtype": "Link",
+      "in_list_view": 1,
+      "label": "Tenant",
+      "options": "Stock Market Tenant",
+      "reqd": 1
+    },
+    {
+      "fieldname": "batch_date",
+      "fieldtype": "Date",
+      "in_list_view": 1,
+      "label": "Settlement Date",
+      "reqd": 1
+    },
+    {
+      "default": "Pending",
+      "fieldname": "status",
+      "fieldtype": "Select",
+      "in_list_view": 1,
+      "label": "Status",
+      "options": "Pending\nRunning\nCompleted\nFailed"
+    },
+    {
+      "fieldname": "column_break_1",
+      "fieldtype": "Column Break"
+    },
+    {
+      "default": "paper_only",
+      "fieldname": "execution_mode",
+      "fieldtype": "Select",
+      "label": "Execution Mode",
+      "options": "paper_only",
+      "read_only": 1
+    },
+    {
+      "default": "0",
+      "fieldname": "total_orders",
+      "fieldtype": "Int",
+      "in_list_view": 1,
+      "label": "Total Orders"
+    },
+    {
+      "default": "0",
+      "fieldname": "matched_orders",
+      "fieldtype": "Int",
+      "label": "Matched"
+    },
+    {
+      "default": "0",
+      "fieldname": "unmatched_orders",
+      "fieldtype": "Int",
+      "label": "Unmatched"
+    },
+    {
+      "default": "0",
+      "fieldname": "discrepancy_count",
+      "fieldtype": "Int",
+      "in_list_view": 1,
+      "label": "Discrepancies"
+    },
+    {
+      "fieldname": "section_break_summary",
+      "fieldtype": "Section Break",
+      "label": "Settlement Variance Analysis"
+    },
+    {
+      "default": "0.0",
+      "fieldname": "total_paper_pnl",
+      "fieldtype": "Currency",
+      "label": "Total Paper PnL (INR)"
+    },
+    {
+      "default": "0.0",
+      "fieldname": "total_broker_pnl",
+      "fieldtype": "Currency",
+      "label": "Total Broker PnL (INR)"
+    },
+    {
+      "default": "0.0",
+      "fieldname": "variance_inr",
+      "fieldtype": "Currency",
+      "in_list_view": 1,
+      "label": "Variance (INR)"
+    },
+    {
+      "default": "0.0",
+      "fieldname": "variance_pct",
+      "fieldtype": "Percent",
+      "in_list_view": 1,
+      "label": "Variance (%)"
+    },
+    {
+      "fieldname": "column_break_summary2",
+      "fieldtype": "Column Break"
+    },
+    {
+      "default": "0",
+      "fieldname": "run_duration_ms",
+      "fieldtype": "Int",
+      "label": "Run Duration (ms)"
+    },
+    {
+      "fieldname": "run_at",
+      "fieldtype": "Datetime",
+      "label": "Reconciliation Run At"
+    },
+    {
+      "fieldname": "notes",
+      "fieldtype": "Small Text",
+      "label": "Notes & Observations"
+    }
+  ],
+  "links": [],
+  "modified": "2026-10-30 16:00:00.000000",
+  "modified_by": "Administrator",
+  "module": "Stock Market",
+  "name": "Reconciliation Batch",
+  "owner": "Administrator",
+  "permissions": [
+    {
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "role": "System Manager",
+      "share": 1,
+      "write": 1
+    },
+    {
+      "create": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "role": "Stock Market Operator",
+      "share": 1,
+      "write": 1
+    },
+    {
+      "email": 1,
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "role": "Stock Market Analyst",
+      "share": 0,
+      "write": 0
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "states": [],
+  "track_changes": 1
+}
+

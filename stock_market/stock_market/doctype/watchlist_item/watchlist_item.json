@@ -1,0 +1,70 @@
+{
+  "actions": [],
+  "creation": "2026-10-30 13:00:00.000000",
+  "doctype": "DocType",
+  "document_type": "Child Table",
+  "engine": "InnoDB",
+  "field_order": [
+    "exchange", "symbol", "instrument_type",
+    "column_break_1",
+    "token", "isin", "lot_size", "added_at"
+  ],
+  "fields": [
+    {
+      "fieldname": "exchange",
+      "fieldtype": "Select",
+      "in_list_view": 1,
+      "label": "Exchange",
+      "options": "NSE\nBSE\nNFO\nBFO\nMCX",
+      "reqd": 1
+    },
+    {
+      "fieldname": "symbol",
+      "fieldtype": "Data",
+      "in_list_view": 1,
+      "label": "Symbol / Ticker",
+      "reqd": 1
+    },
+    {
+      "fieldname": "instrument_type",
+      "fieldtype": "Select",
+      "in_list_view": 1,
+      "label": "Type",
+      "options": "EQ\nFUT\nOPT\nIDX\nETF"
+    },
+    {"fieldname": "column_break_1", "fieldtype": "Column Break"},
+    {
+      "fieldname": "token",
+      "fieldtype": "Data",
+      "label": "Exchange Token / Scrip Code"
+    },
+    {
+      "fieldname": "isin",
+      "fieldtype": "Data",
+      "label": "ISIN"
+    },
+    {
+      "fieldname": "lot_size",
+      "fieldtype": "Int",
+      "label": "Lot Size",
+      "default": "1"
+    },
+    {
+      "fieldname": "added_at",
+      "fieldtype": "Datetime",
+      "label": "Added At",
+      "read_only": 1
+    }
+  ],
+  "istable": 1,
+  "links": [],
+  "modified": "2026-10-30 13:00:00.000000",
+  "modified_by": "Administrator",
+  "module": "Stock Market",
+  "name": "Watchlist Item",
+  "owner": "Administrator",
+  "permissions": [],
+  "sort_field": "creation",
+  "sort_order": "ASC"
+}
+

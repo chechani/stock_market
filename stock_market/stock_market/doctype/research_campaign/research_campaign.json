@@ -1,0 +1,287 @@
+{
+  "actions": [],
+  "allow_rename": 0,
+  "autoname": "format:CMP-{tenant}-{YYYYMMDD}-{#####}",
+  "creation": "2026-10-30 16:00:00.000000",
+  "doctype": "DocType",
+  "document_type": "Document",
+  "engine": "InnoDB",
+  "field_order": [
+    "campaign_name",
+    "tenant",
+    "strategy",
+    "universe",
+    "timeframe",
+    "column_break_1",
+    "status",
+    "start_date",
+    "end_date",
+    "initial_capital_inr",
+    "ending_capital_inr",
+    "section_break_perf",
+    "total_trades",
+    "winning_trades",
+    "losing_trades",
+    "win_rate_pct",
+    "column_break_perf2",
+    "pnl_inr",
+    "return_pct",
+    "max_drawdown_pct",
+    "sharpe_ratio",
+    "profit_factor",
+    "section_break_params",
+    "fast_ma",
+    "slow_ma",
+    "stop_loss_pct",
+    "take_profit_pct",
+    "column_break_params2",
+    "execution_mode",
+    "notes"
+  ],
+  "fields": [
+    {
+      "fieldname": "campaign_name",
+      "fieldtype": "Data",
+      "in_list_view": 1,
+      "label": "Campaign Name",
+      "reqd": 1
+    },
+    {
+      "default": "pandey",
+      "fieldname": "tenant",
+      "fieldtype": "Link",
+      "in_list_view": 1,
+      "label": "Tenant",
+      "options": "Stock Market Tenant",
+      "reqd": 1
+    },
+    {
+      "fieldname": "strategy",
+      "fieldtype": "Link",
+      "in_list_view": 1,
+      "label": "Strategy",
+      "options": "Strategy Definition"
+    },
+    {
+      "default": "RELIANCE",
+      "fieldname": "universe",
+      "fieldtype": "Data",
+      "in_list_view": 1,
+      "label": "Universe / Symbol",
+      "reqd": 1
+    },
+    {
+      "default": "15m",
+      "fieldname": "timeframe",
+      "fieldtype": "Select",
+      "in_list_view": 1,
+      "label": "Timeframe",
+      "options": "1m\n5m\n15m\n1h\nDaily\nWeekly",
+      "reqd": 1
+    },
+    {
+      "fieldname": "column_break_1",
+      "fieldtype": "Column Break"
+    },
+    {
+      "default": "Completed",
+      "fieldname": "status",
+      "fieldtype": "Select",
+      "in_list_view": 1,
+      "label": "Status",
+      "options": "Draft\nRunning\nCompleted\nFailed"
+    },
+    {
+      "fieldname": "start_date",
+      "fieldtype": "Date",
+      "label": "Start Date"
+    },
+    {
+      "fieldname": "end_date",
+      "fieldtype": "Date",
+      "label": "End Date"
+    },
+    {
+      "default": "500000.0",
+      "fieldname": "initial_capital_inr",
+      "fieldtype": "Currency",
+      "label": "Initial Capital (INR)"
+    },
+    {
+      "default": "500000.0",
+      "fieldname": "ending_capital_inr",
+      "fieldtype": "Currency",
+      "label": "Ending Capital (INR)"
+    },
+    {
+      "fieldname": "section_break_perf",
+      "fieldtype": "Section Break",
+      "label": "Performance Metrics"
+    },
+    {
+      "default": "0",
+      "fieldname": "total_trades",
+      "fieldtype": "Int",
+      "in_list_view": 1,
+      "label": "Total Trades"
+    },
+    {
+      "default": "0",
+      "fieldname": "winning_trades",
+      "fieldtype": "Int",
+      "label": "Winning Trades"
+    },
+    {
+      "default": "0",
+      "fieldname": "losing_trades",
+      "fieldtype": "Int",
+      "label": "Losing Trades"
+    },
+    {
+      "default": "0.0",
+      "fieldname": "win_rate_pct",
+      "fieldtype": "Percent",
+      "in_list_view": 1,
+      "label": "Win Rate (%)"
+    },
+    {
+      "fieldname": "column_break_perf2",
+      "fieldtype": "Column Break"
+    },
+    {
+      "default": "0.0",
+      "fieldname": "pnl_inr",
+      "fieldtype": "Currency",
+      "in_list_view": 1,
+      "label": "Net PnL (INR)"
+    },
+    {
+      "default": "0.0",
+      "fieldname": "return_pct",
+      "fieldtype": "Percent",
+      "in_list_view": 1,
+      "label": "Return (%)"
+    },
+    {
+      "default": "0.0",
+      "fieldname": "max_drawdown_pct",
+      "fieldtype": "Percent",
+      "label": "Max Drawdown (%)"
+    },
+    {
+      "default": "0.0",
+      "fieldname": "sharpe_ratio",
+      "fieldtype": "Float",
+      "label": "Sharpe Ratio"
+    },
+    {
+      "default": "0.0",
+      "fieldname": "profit_factor",
+      "fieldtype": "Float",
+      "label": "Profit Factor"
+    },
+    {
+      "fieldname": "section_break_params",
+      "fieldtype": "Section Break",
+      "label": "Strategy Parameters & Safety"
+    },
+    {
+      "default": "9",
+      "fieldname": "fast_ma",
+      "fieldtype": "Int",
+      "label": "Fast MA Period"
+    },
+    {
+      "default": "21",
+      "fieldname": "slow_ma",
+      "fieldtype": "Int",
+      "label": "Slow MA Period"
+    },
+    {
+      "default": "2.0",
+      "fieldname": "stop_loss_pct",
+      "fieldtype": "Percent",
+      "label": "Stop Loss (%)"
+    },
+    {
+      "default": "4.0",
+      "fieldname": "take_profit_pct",
+      "fieldtype": "Percent",
+      "label": "Take Profit (%)"
+    },
+    {
+      "fieldname": "column_break_params2",
+      "fieldtype": "Column Break"
+    },
+    {
+      "default": "paper_only",
+      "fieldname": "execution_mode",
+      "fieldtype": "Select",
+      "label": "Execution Mode",
+      "options": "paper_only",
+      "read_only": 1
+    },
+    {
+      "fieldname": "notes",
+      "fieldtype": "Small Text",
+      "label": "Notes & Observations"
+    }
+  ],
+  "links": [],
+  "modified": "2026-10-30 16:00:00.000000",
+  "modified_by": "Administrator",
+  "module": "Stock Market",
+  "name": "Research Campaign",
+  "owner": "Administrator",
+  "permissions": [
+    {
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "role": "System Manager",
+      "share": 1,
+      "write": 1
+    },
+    {
+      "create": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "role": "Stock Market Operator",
+      "share": 1,
+      "write": 1
+    },
+    {
+      "create": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "role": "Stock Market Analyst",
+      "share": 1,
+      "write": 1
+    },
+    {
+      "email": 1,
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "role": "Stock Market Client",
+      "share": 0,
+      "write": 0
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "states": [],
+  "track_changes": 1
+}
+

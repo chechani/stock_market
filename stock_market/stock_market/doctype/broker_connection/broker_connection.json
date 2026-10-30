@@ -1,0 +1,120 @@
+{
+  "actions": [],
+  "allow_rename": 0,
+  "autoname": "format:BC-{tenant}-{broker_code}-{YYYY}",
+  "creation": "2026-10-30 13:00:00.000000",
+  "doctype": "DocType",
+  "document_type": "Document",
+  "engine": "InnoDB",
+  "field_order": [
+    "tenant", "broker_code", "broker_name", "status",
+    "column_break_1",
+    "api_endpoint", "client_id", "is_live_enabled",
+    "section_break_credentials",
+    "client_secret_hash", "access_token_enc",
+    "section_break_audit",
+    "connected_at", "last_healthcheck_at", "healthcheck_status"
+  ],
+  "fields": [
+    {
+      "fieldname": "tenant",
+      "fieldtype": "Link",
+      "in_list_view": 1,
+      "label": "Tenant",
+      "options": "Stock Market Tenant",
+      "reqd": 1
+    },
+    {
+      "fieldname": "broker_code",
+      "fieldtype": "Select",
+      "in_list_view": 1,
+      "label": "Broker",
+      "options": "XTS\nRMoney\nZerodha\nAngelOne\nUpstox\nICICI Direct\nOther",
+      "reqd": 1
+    },
+    {
+      "fieldname": "broker_name",
+      "fieldtype": "Data",
+      "label": "Broker Display Name",
+      "reqd": 1
+    },
+    {
+      "default": "Inactive",
+      "fieldname": "status",
+      "fieldtype": "Select",
+      "in_list_view": 1,
+      "label": "Connection Status",
+      "options": "Inactive\nConnecting\nConnected\nError\nRevoked"
+    },
+    {"fieldname": "column_break_1", "fieldtype": "Column Break"},
+    {
+      "fieldname": "api_endpoint",
+      "fieldtype": "Data",
+      "label": "API Base Endpoint"
+    },
+    {
+      "fieldname": "client_id",
+      "fieldtype": "Data",
+      "label": "Client / App ID"
+    },
+    {
+      "default": "0",
+      "description": "Live order execution requires separate explicit written authorisation. Disabled by default.",
+      "fieldname": "is_live_enabled",
+      "fieldtype": "Check",
+      "label": "Live Execution Enabled"
+    },
+    {"fieldname": "section_break_credentials", "fieldtype": "Section Break", "label": "Secure Credentials (Never stored plaintext)"},
+    {
+      "fieldname": "client_secret_hash",
+      "fieldtype": "Data",
+      "label": "Client Secret (Hash Only)",
+      "read_only": 1,
+      "description": "Only a one-way hash is persisted. The plaintext secret is never stored."
+    },
+    {
+      "fieldname": "access_token_enc",
+      "fieldtype": "Small Text",
+      "label": "Access Token (Encrypted)",
+      "read_only": 1
+    },
+    {"fieldname": "section_break_audit", "fieldtype": "Section Break", "label": "Audit & Health"},
+    {
+      "fieldname": "connected_at",
+      "fieldtype": "Datetime",
+      "label": "Connected At",
+      "read_only": 1
+    },
+    {
+      "fieldname": "last_healthcheck_at",
+      "fieldtype": "Datetime",
+      "label": "Last Healthcheck At",
+      "read_only": 1
+    },
+    {
+      "fieldname": "healthcheck_status",
+      "fieldtype": "Select",
+      "label": "Healthcheck Result",
+      "options": "\nOK\nDegraded\nFailed",
+      "read_only": 1
+    }
+  ],
+  "icon": "plug",
+  "links": [],
+  "modified": "2026-10-30 13:00:00.000000",
+  "modified_by": "Administrator",
+  "module": "Stock Market",
+  "name": "Broker Connection",
+  "naming_rule": "Expression",
+  "owner": "Administrator",
+  "permissions": [
+    {"create": 1, "delete": 1, "email": 1, "export": 0, "print": 0, "read": 1, "report": 1, "role": "System Manager", "share": 0, "write": 1},
+    {"create": 1, "delete": 0, "read": 1, "report": 1, "role": "Stock Market Provider Admin", "write": 1},
+    {"create": 1, "delete": 0, "read": 1, "role": "Stock Market Operator", "write": 1},
+    {"read": 1, "role": "Stock Market Analyst"}
+  ],
+  "sort_field": "creation",
+  "sort_order": "DESC",
+  "track_changes": 1
+}
+

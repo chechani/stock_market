@@ -1,0 +1,131 @@
+{
+  "actions": [],
+  "allow_rename": 0,
+  "autoname": "format:PROV-{tenant}-{YYYYMMDD}-{####}",
+  "creation": "2026-10-30 12:00:00.000000",
+  "doctype": "DocType",
+  "document_type": "Document",
+  "engine": "InnoDB",
+  "field_order": [
+    "tenant",
+    "correlation_id",
+    "status",
+    "current_step",
+    "column_break_1",
+    "started_at",
+    "completed_at",
+    "error_message",
+    "section_break_logs",
+    "logs"
+  ],
+  "fields": [
+    {
+      "fieldname": "tenant",
+      "fieldtype": "Link",
+      "in_list_view": 1,
+      "label": "Tenant",
+      "options": "Stock Market Tenant",
+      "reqd": 1
+    },
+    {
+      "fieldname": "correlation_id",
+      "fieldtype": "Data",
+      "in_list_view": 1,
+      "label": "Correlation ID",
+      "reqd": 1,
+      "unique": 1
+    },
+    {
+      "default": "Queued",
+      "fieldname": "status",
+      "fieldtype": "Select",
+      "in_list_view": 1,
+      "label": "Status",
+      "options": "Queued\nIn Progress\nSuccess\nFailed",
+      "reqd": 1
+    },
+    {
+      "default": "reserve_identity",
+      "fieldname": "current_step",
+      "fieldtype": "Select",
+      "in_list_view": 1,
+      "label": "Current Step",
+      "options": "reserve_identity\nprepare_site\ninstall_apps\nconfigure_mode\ncreate_owner\ncompleted\nfailed",
+      "reqd": 1
+    },
+    {
+      "fieldname": "column_break_1",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "started_at",
+      "fieldtype": "Datetime",
+      "label": "Started At"
+    },
+    {
+      "fieldname": "completed_at",
+      "fieldtype": "Datetime",
+      "label": "Completed At"
+    },
+    {
+      "fieldname": "error_message",
+      "fieldtype": "Small Text",
+      "label": "Error Message"
+    },
+    {
+      "fieldname": "section_break_logs",
+      "fieldtype": "Section Break",
+      "label": "Execution Audit Logs"
+    },
+    {
+      "fieldname": "logs",
+      "fieldtype": "Code",
+      "label": "Logs",
+      "options": "JSON"
+    }
+  ],
+  "icon": "workflow",
+  "index_web_pages_for_search": 1,
+  "links": [],
+  "modified": "2026-10-30 12:00:00.000000",
+  "modified_by": "Administrator",
+  "module": "Stock Market",
+  "name": "Stock Market Provisioning Run",
+  "naming_rule": "Expression",
+  "owner": "Administrator",
+  "permissions": [
+    {
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "role": "System Manager",
+      "share": 1,
+      "write": 1
+    },
+    {
+      "create": 1,
+      "delete": 0,
+      "email": 1,
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "role": "Stock Market Provider Admin",
+      "share": 1,
+      "write": 1
+    },
+    {
+      "read": 1,
+      "role": "Stock Market Operator"
+    }
+  ],
+  "quick_entry": 1,
+  "sort_field": "creation",
+  "sort_order": "DESC",
+  "track_changes": 1
+}
+

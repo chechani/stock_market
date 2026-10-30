@@ -1,0 +1,154 @@
+{
+  "actions": [],
+  "allow_rename": 0,
+  "autoname": "field:feed_code",
+  "creation": "2026-10-30 15:00:00.000000",
+  "doctype": "DocType",
+  "document_type": "Document",
+  "engine": "InnoDB",
+  "field_order": [
+    "feed_code",
+    "feed_name",
+    "feed_type",
+    "status",
+    "column_break_1",
+    "exchange",
+    "tick_frequency_sec",
+    "is_paper_only",
+    "section_break_symbols",
+    "symbols_tracked",
+    "section_break_audit",
+    "last_heartbeat_at",
+    "total_ticks_ingested"
+  ],
+  "fields": [
+    {
+      "fieldname": "feed_code",
+      "fieldtype": "Data",
+      "in_list_view": 1,
+      "label": "Feed Identifier Code",
+      "reqd": 1,
+      "unique": 1
+    },
+    {
+      "fieldname": "feed_name",
+      "fieldtype": "Data",
+      "in_list_view": 1,
+      "label": "Display Name",
+      "reqd": 1
+    },
+    {
+      "default": "XTS Paper Feed",
+      "fieldname": "feed_type",
+      "fieldtype": "Select",
+      "in_list_view": 1,
+      "label": "Adapter Format",
+      "options": "XTS Paper Feed\nRMoney Paper Feed\nSynthetic Generator\nExternal EOD",
+      "reqd": 1
+    },
+    {
+      "default": "Active",
+      "fieldname": "status",
+      "fieldtype": "Select",
+      "in_list_view": 1,
+      "label": "Feed Status",
+      "options": "Active\nIdle\nError",
+      "reqd": 1
+    },
+    {
+      "fieldname": "column_break_1",
+      "fieldtype": "Column Break"
+    },
+    {
+      "default": "NSE",
+      "fieldname": "exchange",
+      "fieldtype": "Select",
+      "label": "Default Exchange",
+      "options": "NSE\nBSE\nMCX"
+    },
+    {
+      "default": "1.0",
+      "fieldname": "tick_frequency_sec",
+      "fieldtype": "Float",
+      "label": "Tick Frequency (Seconds)"
+    },
+    {
+      "default": "1",
+      "fieldname": "is_paper_only",
+      "fieldtype": "Check",
+      "label": "Paper Simulation Only (Live Disabled)",
+      "read_only": 1
+    },
+    {
+      "fieldname": "section_break_symbols",
+      "fieldtype": "Section Break",
+      "label": "Instrument Universe"
+    },
+    {
+      "default": "NIFTY50, RELIANCE, TCS, INFY, HDFCBANK, ICICIBANK, SBIN, BHARTIARTL",
+      "fieldname": "symbols_tracked",
+      "fieldtype": "Small Text",
+      "label": "Tracked Symbols (CSV)"
+    },
+    {
+      "fieldname": "section_break_audit",
+      "fieldtype": "Section Break",
+      "label": "Heartbeat & Telemetry"
+    },
+    {
+      "fieldname": "last_heartbeat_at",
+      "fieldtype": "Datetime",
+      "label": "Last Heartbeat",
+      "read_only": 1
+    },
+    {
+      "default": "0",
+      "fieldname": "total_ticks_ingested",
+      "fieldtype": "Int",
+      "label": "Total Ticks Ingested",
+      "read_only": 1
+    }
+  ],
+  "icon": "rss",
+  "links": [],
+  "modified": "2026-10-30 15:00:00.000000",
+  "modified_by": "Administrator",
+  "module": "Stock Market",
+  "name": "Market Data Feed",
+  "naming_rule": "By fieldname",
+  "owner": "Administrator",
+  "permissions": [
+    {
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "role": "System Manager",
+      "share": 1,
+      "write": 1
+    },
+    {
+      "create": 1,
+      "delete": 0,
+      "read": 1,
+      "report": 1,
+      "role": "Stock Market Provider Admin",
+      "write": 1
+    },
+    {
+      "read": 1,
+      "role": "Stock Market Operator"
+    },
+    {
+      "read": 1,
+      "role": "Stock Market Analyst"
+    }
+  ],
+  "sort_field": "creation",
+  "sort_order": "DESC",
+  "track_changes": 1
+}
+

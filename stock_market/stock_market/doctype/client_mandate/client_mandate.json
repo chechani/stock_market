@@ -1,0 +1,153 @@
+{
+  "actions": [],
+  "allow_rename": 0,
+  "autoname": "format:MND-{tenant}-{client_user}-{YYYYMMDD}",
+  "creation": "2026-10-30 13:00:00.000000",
+  "doctype": "DocType",
+  "document_type": "Document",
+  "engine": "InnoDB",
+  "field_order": [
+    "tenant", "client_user", "mandate_type", "status",
+    "column_break_1",
+    "risk_profile", "max_capital_inr", "max_single_trade_inr",
+    "section_break_strategy",
+    "strategy", "broker_connection", "execution_mode",
+    "section_break_consent",
+    "consent_given_at", "consent_ip", "consent_hash",
+    "section_break_audit",
+    "reviewed_by", "reviewed_at", "review_notes"
+  ],
+  "fields": [
+    {
+      "fieldname": "tenant",
+      "fieldtype": "Link",
+      "in_list_view": 1,
+      "label": "Tenant",
+      "options": "Stock Market Tenant",
+      "reqd": 1
+    },
+    {
+      "fieldname": "client_user",
+      "fieldtype": "Link",
+      "in_list_view": 1,
+      "label": "Client User",
+      "options": "User",
+      "reqd": 1
+    },
+    {
+      "default": "Research Only",
+      "fieldname": "mandate_type",
+      "fieldtype": "Select",
+      "in_list_view": 1,
+      "label": "Mandate Type",
+      "options": "Research Only\nPaper Execution\nManaged Execution (Gated)"
+    },
+    {
+      "default": "Draft",
+      "fieldname": "status",
+      "fieldtype": "Select",
+      "in_list_view": 1,
+      "label": "Status",
+      "options": "Draft\nPending Consent\nActive\nExpired\nRevoked"
+    },
+    {"fieldname": "column_break_1", "fieldtype": "Column Break"},
+    {
+      "default": "Conservative",
+      "fieldname": "risk_profile",
+      "fieldtype": "Select",
+      "label": "Risk Profile",
+      "options": "Conservative\nModerate\nAggressive"
+    },
+    {
+      "fieldname": "max_capital_inr",
+      "fieldtype": "Currency",
+      "label": "Max Deployed Capital (₹)",
+      "options": "INR"
+    },
+    {
+      "fieldname": "max_single_trade_inr",
+      "fieldtype": "Currency",
+      "label": "Max Single Trade (₹)",
+      "options": "INR"
+    },
+    {"fieldname": "section_break_strategy", "fieldtype": "Section Break", "label": "Assigned Strategy & Broker"},
+    {
+      "fieldname": "strategy",
+      "fieldtype": "Link",
+      "label": "Strategy Definition",
+      "options": "Strategy Definition"
+    },
+    {
+      "fieldname": "broker_connection",
+      "fieldtype": "Link",
+      "label": "Broker Connection",
+      "options": "Broker Connection"
+    },
+    {
+      "default": "paper_only",
+      "fieldname": "execution_mode",
+      "fieldtype": "Select",
+      "in_list_view": 1,
+      "label": "Execution Mode",
+      "options": "paper_only\nshadow_only\nlive_disabled"
+    },
+    {"fieldname": "section_break_consent", "fieldtype": "Section Break", "label": "Explicit Client Consent Record"},
+    {
+      "fieldname": "consent_given_at",
+      "fieldtype": "Datetime",
+      "label": "Consent Given At",
+      "read_only": 1
+    },
+    {
+      "fieldname": "consent_ip",
+      "fieldtype": "Data",
+      "label": "Consent Source IP",
+      "read_only": 1
+    },
+    {
+      "fieldname": "consent_hash",
+      "fieldtype": "Data",
+      "label": "Consent Document Hash",
+      "read_only": 1,
+      "description": "SHA-256 of the consent document presented to client."
+    },
+    {"fieldname": "section_break_audit", "fieldtype": "Section Break", "label": "Operator Review"},
+    {
+      "fieldname": "reviewed_by",
+      "fieldtype": "Link",
+      "label": "Reviewed By",
+      "options": "User",
+      "read_only": 1
+    },
+    {
+      "fieldname": "reviewed_at",
+      "fieldtype": "Datetime",
+      "label": "Reviewed At",
+      "read_only": 1
+    },
+    {
+      "fieldname": "review_notes",
+      "fieldtype": "Small Text",
+      "label": "Review Notes"
+    }
+  ],
+  "icon": "file-text",
+  "links": [],
+  "modified": "2026-10-30 13:00:00.000000",
+  "modified_by": "Administrator",
+  "module": "Stock Market",
+  "name": "Client Mandate",
+  "naming_rule": "Expression",
+  "owner": "Administrator",
+  "permissions": [
+    {"create": 1, "delete": 1, "read": 1, "report": 1, "role": "System Manager", "write": 1},
+    {"create": 1, "delete": 0, "read": 1, "report": 1, "role": "Stock Market Provider Admin", "write": 1},
+    {"create": 1, "delete": 0, "read": 1, "role": "Stock Market Operator", "write": 1},
+    {"read": 1, "role": "Stock Market Analyst"},
+    {"read": 1, "role": "Stock Market Client"}
+  ],
+  "sort_field": "creation",
+  "sort_order": "DESC",
+  "track_changes": 1
+}
+

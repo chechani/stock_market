@@ -1,0 +1,144 @@
+{
+  "actions": [],
+  "allow_rename": 0,
+  "autoname": "format:SUB-{tenant}-{YYYY}{MM}-{#####}",
+  "creation": "2026-10-30 13:30:00.000000",
+  "doctype": "DocType",
+  "document_type": "Document",
+  "engine": "InnoDB",
+  "field_order": [
+    "tenant",
+    "plan",
+    "status",
+    "column_break_1",
+    "billing_start",
+    "billing_end",
+    "price_paid_inr",
+    "auto_renew",
+    "section_break_billing",
+    "invoice_reference",
+    "erpnext_invoice_id",
+    "notes"
+  ],
+  "fields": [
+    {
+      "fieldname": "tenant",
+      "fieldtype": "Link",
+      "in_list_view": 1,
+      "label": "Tenant",
+      "options": "Stock Market Tenant",
+      "reqd": 1
+    },
+    {
+      "fieldname": "plan",
+      "fieldtype": "Link",
+      "in_list_view": 1,
+      "label": "SaaS Plan",
+      "options": "SaaS Plan",
+      "reqd": 1
+    },
+    {
+      "default": "Active",
+      "fieldname": "status",
+      "fieldtype": "Select",
+      "in_list_view": 1,
+      "label": "Subscription Status",
+      "options": "Active\nTrialing\nPast Due\nCanceled\nExpired",
+      "reqd": 1
+    },
+    {
+      "fieldname": "column_break_1",
+      "fieldtype": "Column Break"
+    },
+    {
+      "fieldname": "billing_start",
+      "fieldtype": "Date",
+      "in_list_view": 1,
+      "label": "Billing Start Date",
+      "reqd": 1
+    },
+    {
+      "fieldname": "billing_end",
+      "fieldtype": "Date",
+      "in_list_view": 1,
+      "label": "Billing End Date",
+      "reqd": 1
+    },
+    {
+      "default": "0",
+      "fieldname": "price_paid_inr",
+      "fieldtype": "Currency",
+      "in_list_view": 1,
+      "label": "Price Paid (INR)"
+    },
+    {
+      "default": "1",
+      "fieldname": "auto_renew",
+      "fieldtype": "Check",
+      "label": "Auto-Renew"
+    },
+    {
+      "fieldname": "section_break_billing",
+      "fieldtype": "Section Break",
+      "label": "Invoicing & Audit"
+    },
+    {
+      "fieldname": "invoice_reference",
+      "fieldtype": "Data",
+      "label": "Invoice Reference Number"
+    },
+    {
+      "fieldname": "erpnext_invoice_id",
+      "fieldtype": "Data",
+      "label": "ERPNext Sales Invoice",
+      "read_only": 1
+    },
+    {
+      "fieldname": "notes",
+      "fieldtype": "Small Text",
+      "label": "Notes & Terms"
+    }
+  ],
+  "icon": "credit-card",
+  "links": [],
+  "modified": "2026-10-30 13:30:00.000000",
+  "modified_by": "Administrator",
+  "module": "Stock Market",
+  "name": "Tenant Subscription",
+  "naming_rule": "Expression",
+  "owner": "Administrator",
+  "permissions": [
+    {
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "role": "System Manager",
+      "share": 1,
+      "write": 1
+    },
+    {
+      "create": 1,
+      "delete": 0,
+      "read": 1,
+      "report": 1,
+      "role": "Stock Market Provider Admin",
+      "write": 1
+    },
+    {
+      "read": 1,
+      "role": "Stock Market Operator"
+    },
+    {
+      "read": 1,
+      "role": "Stock Market Client"
+    }
+  ],
+  "sort_field": "creation",
+  "sort_order": "DESC",
+  "track_changes": 1
+}
+

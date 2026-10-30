@@ -1,0 +1,171 @@
+{
+  "actions": [],
+  "allow_rename": 0,
+  "autoname": "field:plan_code",
+  "creation": "2026-10-30 13:30:00.000000",
+  "doctype": "DocType",
+  "document_type": "Document",
+  "engine": "InnoDB",
+  "field_order": [
+    "plan_code",
+    "plan_name",
+    "tier",
+    "price_inr",
+    "billing_interval",
+    "is_active",
+    "column_break_1",
+    "max_strategies",
+    "max_watchlists",
+    "max_broker_connections",
+    "max_mandates",
+    "section_break_meta",
+    "description",
+    "features_json",
+    "limits_json"
+  ],
+  "fields": [
+    {
+      "fieldname": "plan_code",
+      "fieldtype": "Data",
+      "in_list_view": 1,
+      "label": "Plan Code",
+      "reqd": 1,
+      "unique": 1
+    },
+    {
+      "fieldname": "plan_name",
+      "fieldtype": "Data",
+      "in_list_view": 1,
+      "label": "Plan Name",
+      "reqd": 1
+    },
+    {
+      "default": "Starter",
+      "fieldname": "tier",
+      "fieldtype": "Select",
+      "in_list_view": 1,
+      "label": "Tier",
+      "options": "Starter\nPro\nEnterprise",
+      "reqd": 1
+    },
+    {
+      "default": "0",
+      "fieldname": "price_inr",
+      "fieldtype": "Currency",
+      "in_list_view": 1,
+      "label": "Price (INR / period)",
+      "reqd": 1
+    },
+    {
+      "default": "Monthly",
+      "fieldname": "billing_interval",
+      "fieldtype": "Select",
+      "label": "Billing Interval",
+      "options": "Monthly\nYearly\nLifetime"
+    },
+    {
+      "default": "1",
+      "fieldname": "is_active",
+      "fieldtype": "Check",
+      "label": "Is Active"
+    },
+    {
+      "fieldname": "column_break_1",
+      "fieldtype": "Column Break"
+    },
+    {
+      "default": "2",
+      "fieldname": "max_strategies",
+      "fieldtype": "Int",
+      "label": "Max Strategies"
+    },
+    {
+      "default": "3",
+      "fieldname": "max_watchlists",
+      "fieldtype": "Int",
+      "label": "Max Watchlists"
+    },
+    {
+      "default": "1",
+      "fieldname": "max_broker_connections",
+      "fieldtype": "Int",
+      "label": "Max Broker Connections"
+    },
+    {
+      "default": "5",
+      "fieldname": "max_mandates",
+      "fieldtype": "Int",
+      "label": "Max Mandates"
+    },
+    {
+      "fieldname": "section_break_meta",
+      "fieldtype": "Section Break",
+      "label": "Plan Details & Features"
+    },
+    {
+      "fieldname": "description",
+      "fieldtype": "Small Text",
+      "label": "Description"
+    },
+    {
+      "default": "[]",
+      "fieldname": "features_json",
+      "fieldtype": "Code",
+      "label": "Features List (JSON Array)",
+      "options": "JSON"
+    },
+    {
+      "default": "{}",
+      "fieldname": "limits_json",
+      "fieldtype": "Code",
+      "label": "Custom Limits (JSON Object)",
+      "options": "JSON"
+    }
+  ],
+  "icon": "tag",
+  "links": [],
+  "modified": "2026-10-30 13:30:00.000000",
+  "modified_by": "Administrator",
+  "module": "Stock Market",
+  "name": "SaaS Plan",
+  "naming_rule": "By fieldname",
+  "owner": "Administrator",
+  "permissions": [
+    {
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "role": "System Manager",
+      "share": 1,
+      "write": 1
+    },
+    {
+      "create": 1,
+      "delete": 0,
+      "read": 1,
+      "report": 1,
+      "role": "Stock Market Provider Admin",
+      "write": 1
+    },
+    {
+      "read": 1,
+      "role": "Stock Market Operator"
+    },
+    {
+      "read": 1,
+      "role": "Stock Market Analyst"
+    },
+    {
+      "read": 1,
+      "role": "Stock Market Client"
+    }
+  ],
+  "sort_field": "price_inr",
+  "sort_order": "ASC",
+  "track_changes": 1
+}
+

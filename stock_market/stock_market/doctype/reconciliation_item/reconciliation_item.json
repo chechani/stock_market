@@ -1,0 +1,178 @@
+{
+  "actions": [],
+  "allow_rename": 0,
+  "autoname": "format:RI-{batch}-{#####}",
+  "creation": "2026-10-30 16:00:00.000000",
+  "doctype": "DocType",
+  "document_type": "Document",
+  "engine": "InnoDB",
+  "field_order": [
+    "batch",
+    "paper_order_id",
+    "symbol",
+    "direction",
+    "quantity",
+    "column_break_1",
+    "paper_execution_price",
+    "broker_settlement_price",
+    "price_variance",
+    "section_break_outcome",
+    "paper_pnl",
+    "broker_pnl",
+    "pnl_variance",
+    "column_break_outcome2",
+    "match_status",
+    "discrepancy_reason",
+    "notes"
+  ],
+  "fields": [
+    {
+      "fieldname": "batch",
+      "fieldtype": "Link",
+      "in_list_view": 1,
+      "label": "Reconciliation Batch",
+      "options": "Reconciliation Batch",
+      "reqd": 1
+    },
+    {
+      "fieldname": "paper_order_id",
+      "fieldtype": "Data",
+      "in_list_view": 1,
+      "label": "Paper Order ID"
+    },
+    {
+      "fieldname": "symbol",
+      "fieldtype": "Data",
+      "in_list_view": 1,
+      "label": "Symbol"
+    },
+    {
+      "default": "BUY",
+      "fieldname": "direction",
+      "fieldtype": "Select",
+      "in_list_view": 1,
+      "label": "Direction",
+      "options": "BUY\nSELL"
+    },
+    {
+      "default": "0",
+      "fieldname": "quantity",
+      "fieldtype": "Int",
+      "label": "Quantity"
+    },
+    {
+      "fieldname": "column_break_1",
+      "fieldtype": "Column Break"
+    },
+    {
+      "default": "0.0",
+      "fieldname": "paper_execution_price",
+      "fieldtype": "Currency",
+      "label": "Paper Execution Price"
+    },
+    {
+      "default": "0.0",
+      "fieldname": "broker_settlement_price",
+      "fieldtype": "Currency",
+      "label": "Broker Settlement Price (Simulated)"
+    },
+    {
+      "default": "0.0",
+      "fieldname": "price_variance",
+      "fieldtype": "Currency",
+      "label": "Price Variance"
+    },
+    {
+      "fieldname": "section_break_outcome",
+      "fieldtype": "Section Break",
+      "label": "PnL Variance"
+    },
+    {
+      "default": "0.0",
+      "fieldname": "paper_pnl",
+      "fieldtype": "Currency",
+      "label": "Paper PnL"
+    },
+    {
+      "default": "0.0",
+      "fieldname": "broker_pnl",
+      "fieldtype": "Currency",
+      "label": "Broker PnL (Simulated)"
+    },
+    {
+      "default": "0.0",
+      "fieldname": "pnl_variance",
+      "fieldtype": "Currency",
+      "in_list_view": 1,
+      "label": "PnL Variance"
+    },
+    {
+      "fieldname": "column_break_outcome2",
+      "fieldtype": "Column Break"
+    },
+    {
+      "default": "Matched",
+      "fieldname": "match_status",
+      "fieldtype": "Select",
+      "in_list_view": 1,
+      "label": "Match Status",
+      "options": "Matched\nPrice Discrepancy\nMissing in Broker\nQuantity Mismatch"
+    },
+    {
+      "fieldname": "discrepancy_reason",
+      "fieldtype": "Data",
+      "label": "Discrepancy Reason"
+    },
+    {
+      "fieldname": "notes",
+      "fieldtype": "Small Text",
+      "label": "Notes"
+    }
+  ],
+  "links": [],
+  "modified": "2026-10-30 16:00:00.000000",
+  "modified_by": "Administrator",
+  "module": "Stock Market",
+  "name": "Reconciliation Item",
+  "owner": "Administrator",
+  "permissions": [
+    {
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "role": "System Manager",
+      "share": 1,
+      "write": 1
+    },
+    {
+      "create": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "role": "Stock Market Operator",
+      "share": 1,
+      "write": 1
+    },
+    {
+      "email": 1,
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "role": "Stock Market Analyst",
+      "share": 0,
+      "write": 0
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "states": [],
+  "track_changes": 0
+}
+

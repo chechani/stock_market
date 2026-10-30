@@ -1,0 +1,191 @@
+{
+  "actions": [],
+  "allow_rename": 0,
+  "autoname": "format:POS-{tenant}-{symbol}-{#####}",
+  "creation": "2026-10-30 15:30:00.000000",
+  "doctype": "DocType",
+  "document_type": "Document",
+  "engine": "InnoDB",
+  "field_order": [
+    "tenant",
+    "symbol",
+    "exchange",
+    "direction",
+    "status",
+    "column_break_1",
+    "quantity",
+    "avg_entry_price",
+    "current_price",
+    "unrealized_pnl",
+    "unrealized_pnl_pct",
+    "realized_pnl",
+    "section_break_meta",
+    "execution_mode",
+    "opened_at",
+    "closed_at"
+  ],
+  "fields": [
+    {
+      "fieldname": "tenant",
+      "fieldtype": "Link",
+      "in_list_view": 1,
+      "label": "Tenant",
+      "options": "Stock Market Tenant",
+      "reqd": 1
+    },
+    {
+      "fieldname": "symbol",
+      "fieldtype": "Data",
+      "in_list_view": 1,
+      "label": "Symbol",
+      "reqd": 1
+    },
+    {
+      "default": "NSE",
+      "fieldname": "exchange",
+      "fieldtype": "Select",
+      "label": "Exchange",
+      "options": "NSE\nBSE\nMCX",
+      "reqd": 1
+    },
+    {
+      "fieldname": "direction",
+      "fieldtype": "Select",
+      "in_list_view": 1,
+      "label": "Direction",
+      "options": "LONG\nSHORT",
+      "reqd": 1
+    },
+    {
+      "default": "OPEN",
+      "fieldname": "status",
+      "fieldtype": "Select",
+      "in_list_view": 1,
+      "label": "Position Status",
+      "options": "OPEN\nCLOSED",
+      "reqd": 1
+    },
+    {
+      "fieldname": "column_break_1",
+      "fieldtype": "Column Break"
+    },
+    {
+      "default": "0",
+      "fieldname": "quantity",
+      "fieldtype": "Int",
+      "in_list_view": 1,
+      "label": "Position Quantity",
+      "reqd": 1
+    },
+    {
+      "default": "0",
+      "fieldname": "avg_entry_price",
+      "fieldtype": "Float",
+      "in_list_view": 1,
+      "label": "Avg Entry Price (₹)",
+      "reqd": 1
+    },
+    {
+      "default": "0",
+      "fieldname": "current_price",
+      "fieldtype": "Float",
+      "in_list_view": 1,
+      "label": "Current Market Price (₹)",
+      "reqd": 1
+    },
+    {
+      "default": "0",
+      "fieldname": "unrealized_pnl",
+      "fieldtype": "Currency",
+      "in_list_view": 1,
+      "label": "Unrealized PnL (₹)"
+    },
+    {
+      "default": "0",
+      "fieldname": "unrealized_pnl_pct",
+      "fieldtype": "Float",
+      "in_list_view": 1,
+      "label": "Unrealized PnL (%)"
+    },
+    {
+      "default": "0",
+      "fieldname": "realized_pnl",
+      "fieldtype": "Currency",
+      "label": "Realized PnL (₹)"
+    },
+    {
+      "fieldname": "section_break_meta",
+      "fieldtype": "Section Break",
+      "label": "Execution Safety"
+    },
+    {
+      "default": "paper_only",
+      "fieldname": "execution_mode",
+      "fieldtype": "Select",
+      "label": "Execution Mode",
+      "options": "paper_only\nshadow_only\nlive_disabled",
+      "read_only": 1,
+      "reqd": 1
+    },
+    {
+      "fieldname": "opened_at",
+      "fieldtype": "Datetime",
+      "in_list_view": 1,
+      "label": "Opened At",
+      "reqd": 1
+    },
+    {
+      "fieldname": "closed_at",
+      "fieldtype": "Datetime",
+      "label": "Closed At"
+    }
+  ],
+  "icon": "pie-chart",
+  "links": [],
+  "modified": "2026-10-30 15:30:00.000000",
+  "modified_by": "Administrator",
+  "module": "Stock Market",
+  "name": "Paper Position",
+  "naming_rule": "Expression",
+  "owner": "Administrator",
+  "permissions": [
+    {
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "role": "System Manager",
+      "share": 1,
+      "write": 1
+    },
+    {
+      "create": 1,
+      "delete": 0,
+      "read": 1,
+      "report": 1,
+      "role": "Stock Market Provider Admin",
+      "write": 1
+    },
+    {
+      "create": 1,
+      "delete": 0,
+      "read": 1,
+      "role": "Stock Market Operator",
+      "write": 1
+    },
+    {
+      "read": 1,
+      "role": "Stock Market Analyst"
+    },
+    {
+      "read": 1,
+      "role": "Stock Market Client"
+    }
+  ],
+  "sort_field": "opened_at",
+  "sort_order": "DESC",
+  "track_changes": 1
+}
