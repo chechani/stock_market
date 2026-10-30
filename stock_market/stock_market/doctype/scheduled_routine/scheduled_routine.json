@@ -1,0 +1,155 @@
+{
+  "actions": [],
+  "allow_rename": 0,
+  "autoname": "format:RTN-{routine_code}-{tenant}",
+  "creation": "2026-10-30 17:00:00.000000",
+  "doctype": "DocType",
+  "document_type": "Document",
+  "engine": "InnoDB",
+  "field_order": [
+    "routine_name",
+    "routine_code",
+    "tenant",
+    "routine_type",
+    "is_enabled",
+    "column_break_1",
+    "schedule_expression",
+    "last_run_at",
+    "last_run_status",
+    "run_count",
+    "section_break_desc",
+    "description",
+    "parameters_json"
+  ],
+  "fields": [
+    {
+      "fieldname": "routine_name",
+      "fieldtype": "Data",
+      "in_list_view": 1,
+      "label": "Routine Name",
+      "reqd": 1
+    },
+    {
+      "fieldname": "routine_code",
+      "fieldtype": "Data",
+      "in_list_view": 1,
+      "label": "Routine Code",
+      "reqd": 1
+    },
+    {
+      "default": "pandey",
+      "fieldname": "tenant",
+      "fieldtype": "Link",
+      "in_list_view": 1,
+      "label": "Tenant",
+      "options": "Stock Market Tenant",
+      "reqd": 1
+    },
+    {
+      "default": "EOD Sweep",
+      "fieldname": "routine_type",
+      "fieldtype": "Select",
+      "in_list_view": 1,
+      "label": "Routine Type",
+      "options": "EOD Sweep\nMarket Open\nMarket Close\nPnL Report\nReconciliation\nRisk Check\nData Cleanup"
+    },
+    {
+      "default": "1",
+      "fieldname": "is_enabled",
+      "fieldtype": "Check",
+      "in_list_view": 1,
+      "label": "Enabled"
+    },
+    {
+      "fieldname": "column_break_1",
+      "fieldtype": "Column Break"
+    },
+    {
+      "default": "0 15 * * 1-5",
+      "fieldname": "schedule_expression",
+      "fieldtype": "Data",
+      "label": "Cron Schedule"
+    },
+    {
+      "fieldname": "last_run_at",
+      "fieldtype": "Datetime",
+      "label": "Last Run At"
+    },
+    {
+      "default": "Never Run",
+      "fieldname": "last_run_status",
+      "fieldtype": "Select",
+      "in_list_view": 1,
+      "label": "Last Run Status",
+      "options": "Never Run\nSuccess\nFailed\nRunning"
+    },
+    {
+      "default": "0",
+      "fieldname": "run_count",
+      "fieldtype": "Int",
+      "label": "Total Runs"
+    },
+    {
+      "fieldname": "section_break_desc",
+      "fieldtype": "Section Break",
+      "label": "Configuration"
+    },
+    {
+      "fieldname": "description",
+      "fieldtype": "Small Text",
+      "label": "Description"
+    },
+    {
+      "fieldname": "parameters_json",
+      "fieldtype": "Code",
+      "label": "Parameters (JSON)",
+      "options": "JSON"
+    }
+  ],
+  "links": [],
+  "modified": "2026-10-30 17:00:00.000000",
+  "modified_by": "Administrator",
+  "module": "Stock Market",
+  "name": "Scheduled Routine",
+  "owner": "Administrator",
+  "permissions": [
+    {
+      "create": 1,
+      "delete": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "role": "System Manager",
+      "share": 1,
+      "write": 1
+    },
+    {
+      "create": 1,
+      "email": 1,
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "role": "Stock Market Operator",
+      "share": 1,
+      "write": 1
+    },
+    {
+      "email": 1,
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "role": "Stock Market Analyst",
+      "share": 0,
+      "write": 0
+    }
+  ],
+  "sort_field": "modified",
+  "sort_order": "DESC",
+  "states": [],
+  "track_changes": 1
+}
+

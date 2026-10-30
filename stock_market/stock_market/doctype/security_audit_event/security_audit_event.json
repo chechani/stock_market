@@ -1,0 +1,150 @@
+{
+  "actions": [],
+  "allow_rename": 0,
+  "autoname": "format:SEC-{tenant}-{YYYYMMDD}-{#####}",
+  "creation": "2026-10-30 18:00:00.000000",
+  "doctype": "DocType",
+  "document_type": "Document",
+  "engine": "InnoDB",
+  "field_order": [
+    "tenant",
+    "event_type",
+    "severity",
+    "status",
+    "column_break_1",
+    "actor",
+    "ip_address",
+    "event_timestamp",
+    "resource_accessed",
+    "section_break_details",
+    "summary",
+    "details_json",
+    "user_agent"
+  ],
+  "fields": [
+    {
+      "default": "pandey",
+      "fieldname": "tenant",
+      "fieldtype": "Link",
+      "in_list_view": 1,
+      "label": "Tenant",
+      "options": "Stock Market Tenant",
+      "reqd": 1
+    },
+    {
+      "default": "ISOLATION_CHECK",
+      "fieldname": "event_type",
+      "fieldtype": "Select",
+      "in_list_view": 1,
+      "label": "Event Type",
+      "options": "AUTH_LOGIN\nAUTH_FAILED\nCROSS_TENANT_ATTEMPT\nAPI_KEY_ROTATION\nPERMISSION_ELEVATION\nLIVE_EXECUTION_BLOCKED\nDATA_EXPORT\nISOLATION_CHECK"
+    },
+    {
+      "default": "INFO",
+      "fieldname": "severity",
+      "fieldtype": "Select",
+      "in_list_view": 1,
+      "label": "Severity",
+      "options": "INFO\nWARNING\nCRITICAL\nBLOCKED"
+    },
+    {
+      "default": "LOGGED",
+      "fieldname": "status",
+      "fieldtype": "Select",
+      "label": "Status",
+      "options": "LOGGED\nINVESTIGATED\nRESOLVED"
+    },
+    {
+      "fieldname": "column_break_1",
+      "fieldtype": "Column Break"
+    },
+    {
+      "default": "Administrator",
+      "fieldname": "actor",
+      "fieldtype": "Data",
+      "in_list_view": 1,
+      "label": "Actor / User"
+    },
+    {
+      "default": "127.0.0.1",
+      "fieldname": "ip_address",
+      "fieldtype": "Data",
+      "label": "IP Address"
+    },
+    {
+      "fieldname": "event_timestamp",
+      "fieldtype": "Datetime",
+      "in_list_view": 1,
+      "label": "Event Timestamp"
+    },
+    {
+      "fieldname": "resource_accessed",
+      "fieldtype": "Data",
+      "label": "Resource Accessed"
+    },
+    {
+      "fieldname": "section_break_details",
+      "fieldtype": "Section Break",
+      "label": "Audit Details"
+    },
+    {
+      "fieldname": "summary",
+      "fieldtype": "Small Text",
+      "in_list_view": 1,
+      "label": "Summary"
+    },
+    {
+      "fieldname": "details_json",
+      "fieldtype": "Code",
+      "label": "Details (JSON)",
+      "options": "JSON"
+    },
+    {
+      "fieldname": "user_agent",
+      "fieldtype": "Small Text",
+      "label": "User Agent"
+    }
+  ],
+  "links": [],
+  "modified": "2026-10-30 18:00:00.000000",
+  "modified_by": "Administrator",
+  "module": "Stock Market",
+  "name": "Security Audit Event",
+  "owner": "Administrator",
+  "permissions": [
+    {
+      "create": 1,
+      "delete": 0,
+      "email": 1,
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "role": "System Manager",
+      "share": 0,
+      "write": 0
+    },
+    {
+      "create": 1,
+      "delete": 0,
+      "email": 1,
+      "export": 1,
+      "print": 1,
+      "read": 1,
+      "report": 1,
+      "role": "Stock Market Operator",
+      "share": 0,
+      "write": 0
+    },
+    {
+      "read": 1,
+      "report": 1,
+      "role": "Stock Market Analyst"
+    }
+  ],
+  "sort_field": "creation",
+  "sort_order": "DESC",
+  "states": [],
+  "track_changes": 0
+}
+
